@@ -93,7 +93,7 @@ MariaDB will show the structure of the table `emp`.
 
 
 ---
-**Insert Commands**
+### **Insert Commands**
 * **`INSERT INTO emp (...) VALUES (...);`** → Adds new rows into the table.
 
 ```
@@ -132,7 +132,7 @@ VALUES (1, 'Pawan', 'Kaur', 18, 'North'),
 
 ---
 
-**Short note on the `SELECT` statement** in SQL:
+### **Short note on the `SELECT` statement** in SQL:
 
 ---
 
@@ -181,9 +181,8 @@ VALUES (1, 'Pawan', 'Kaur', 18, 'North'),
 ---
 
 
-**Short note** on the command **``` select distinct Age from emp;```** used:
+## **Short note** on the command **``` select distinct Age from emp;```** used:
 
----
 
 ### 📌 `SELECT DISTINCT`
 
@@ -228,6 +227,63 @@ Age
 ---
 
 ✅ Use `DISTINCT` when you want to avoid duplicates in query results.
+
+
+
+### Here’s a **short note** on `NOT NULL` in MariaDB with example:
+
+---
+
+### 📌 `NOT NULL` Constraint
+
+* **Definition:** Ensures that a column **cannot have NULL values**.
+* Used when a column must always store a valid value.
+* **Syntax:**
+
+  ```sql
+  column_name datatype NOT NULL
+  ```
+
+---
+
+### 🔹 Example from your table
+
+```sql
+CREATE TABLE demo (
+  ID INT NOT NULL,
+  FirstName VARCHAR(255),
+  LastName VARCHAR(255),
+  Age INT
+);
+```
+
+* Here, `ID` is declared as **NOT NULL**.
+* This means you **cannot insert NULL** into the `ID` column.
+
+---
+
+### 🔹 Behavior
+
+```sql
+INSERT INTO demo(ID, FirstName, LastName, Age)
+VALUES (NULL, 'jack', 'sparrow', 40);
+```
+
+❌ Error: `Column 'ID' cannot be null`
+
+```sql
+INSERT INTO demo(ID, FirstName, LastName, Age)
+VALUES (1, 'jack', 'sparrow', 40);
+```
+
+✅ Works, since `ID` has a valid (non-NULL) value.
+
+---
+
+👉 In short: `NOT NULL` makes sure a column **always has a value**.
+
+
+
 
 
 

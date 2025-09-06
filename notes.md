@@ -181,6 +181,54 @@ VALUES (1, 'Pawan', 'Kaur', 18, 'North'),
 ---
 
 
+**Short note** on the command **``` select distinct Age from emp;```** used:
+
+---
+
+### 📌 `SELECT DISTINCT`
+
+* **Purpose:** Removes duplicate values and shows only **unique results**.
+* **Syntax:**
+
+  ```sql
+  SELECT DISTINCT column_name FROM table_name;
+  ```
+
+---
+
+### 🔹 Example
+
+```sql
+SELECT DISTINCT Age FROM emp;
+```
+
+👉 This will display each **unique Age** from the `emp` table, without repeating values.
+
+**If your table has:**
+
+```
+Age
+----
+13
+18
+15
+15
+```
+
+**Output will be:**
+
+```
+Age
+----
+13
+18
+15
+```
+
+---
+
+✅ Use `DISTINCT` when you want to avoid duplicates in query results.
+
 
 
 

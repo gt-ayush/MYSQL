@@ -49,6 +49,72 @@ CREATE TABLE emp (
 * This table has **no primary key** yet (optional but recommended, usually `ID`).
 
 
+When you run:
+
+```sql
+DESC emp;
+```
+
+or
+
+```sql
+DESCRIBE emp;
+```
+
+MariaDB will show the structure of the table `emp`.
+
+---
+
+### ✅ Expected Output
+
+```
++-----------+--------------+------+-----+---------+-------+
+| Field     | Type         | Null | Key | Default | Extra |
++-----------+--------------+------+-----+---------+-------+
+| ID        | int(11)      | YES  |     | NULL    |       |
+| FirstName | varchar(255) | YES  |     | NULL    |       |
+| LastName  | varchar(255) | YES  |     | NULL    |       |
+| Age       | int(11)      | YES  |     | NULL    |       |
+| Zone      | varchar(255) | YES  |     | NULL    |       |
++-----------+--------------+------+-----+---------+-------+
+```
+
+---
+
+### 🔹 Explanation of Columns
+
+* **Field** → Column name (ID, FirstName, LastName, Age, Zone).
+* **Type** → Data type (`INT`, `VARCHAR(255)`).
+* **Null** → `YES` means column can have empty (NULL) values.
+* **Key** → Shows if it’s a primary key or indexed (empty right now).
+* **Default** → Default value (here `NULL`).
+* **Extra** → Extra info (e.g., `auto_increment` if set).
+
+
+
+---
+
+* **`INSERT INTO emp (...) VALUES (...);`** → Adds new rows into the table.
+* **`SELECT * FROM emp;`** → Displays all rows and columns from the table.
+* Without **PRIMARY KEY**, duplicate IDs are allowed (all rows had `ID = 1`).
+* To avoid duplicates:
+
+  ```sql
+  CREATE TABLE emp (
+    ID INT PRIMARY KEY AUTO_INCREMENT,
+    FirstName VARCHAR(255),
+    LastName VARCHAR(255),
+    Age INT,
+    Zone VARCHAR(255)
+  );
+  ```
+* With **AUTO\_INCREMENT**, `ID` is generated automatically and stays unique.
+
+---
+
+
+
+
 
 
 

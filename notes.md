@@ -93,9 +93,29 @@ MariaDB will show the structure of the table `emp`.
 
 
 ---
-
+**Insert Commands**
 * **`INSERT INTO emp (...) VALUES (...);`** → Adds new rows into the table.
+
+```
+INSERT INTO emp (ID, FirstName, LastName, Age, Zone)
+VALUES (1, 'Pawan', 'Kaur', 18, 'North'),
+       (2, 'Ayush', 'Gupta', 18, 'East'),
+       (3, 'Moli', 'Gupta', 14, 'West'),
+       (4, 'Piyush', 'Gupta', 13, 'South');
+```
+
 * **`SELECT * FROM emp;`** → Displays all rows and columns from the table.
+
+```
++----+-----------+----------+------+-------+
+| ID | FirstName | LastName | Age  | Zone  |
++----+-----------+----------+------+-------+
+|  1 | Pawan     | Kaur     |   18 | North |
+|  2 | Ayush     | Gupta    |   18 | East  |
+|  3 | Moli      | Gupta    |   14 | West  |
+|  4 | Piyush    | Gupta    |   13 | South |
++----+-----------+----------+------+-------+
+```
 * Without **PRIMARY KEY**, duplicate IDs are allowed (all rows had `ID = 1`).
 * To avoid duplicates:
 
@@ -112,6 +132,53 @@ MariaDB will show the structure of the table `emp`.
 
 ---
 
+**Short note on the `SELECT` statement** in SQL:
+
+---
+
+### 📌 `SELECT` Statement in SQL
+
+* The `SELECT` statement is used to **retrieve data** from a database.
+* **Basic Syntax:**
+
+  ```sql
+  SELECT column1, column2, ... FROM table_name;
+  ```
+
+  * `column1, column2` → columns you want to display.
+  * `*` → selects all columns.
+  * `table_name` → the table from which data is fetched.
+
+---
+
+### 🔹 Examples
+
+* **Select all columns:**
+
+  ```sql
+  SELECT * FROM emp;
+  ```
+* **Select specific columns:**
+
+  ```sql
+  SELECT FirstName, Age FROM emp;
+  ```
+* **Select with condition:**
+
+  ```sql
+  SELECT * FROM emp WHERE Age > 18;
+  ```
+* **Select with sorting:**
+
+  ```sql
+  SELECT * FROM emp ORDER BY Age DESC;
+  ```
+
+---
+
+👉 In short: `SELECT` = **query command** to view data with options for filtering (`WHERE`), sorting (`ORDER BY`), and limiting results.
+
+---
 
 
 

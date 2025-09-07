@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 07, 2025 at 06:31 PM
+-- Generation Time: Sep 07, 2025 at 07:15 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -64,7 +64,7 @@ CREATE TABLE `emp2` (
   `ID` int(11) NOT NULL,
   `FN` varchar(255) DEFAULT NULL,
   `LN` varchar(255) DEFAULT NULL,
-  `Age` int(11) DEFAULT NULL
+  `Age` varchar(255) DEFAULT NULL
 ) ;
 
 --
@@ -72,7 +72,7 @@ CREATE TABLE `emp2` (
 --
 
 INSERT INTO `emp2` (`ID`, `FN`, `LN`, `Age`) VALUES
-(1, 'Ayush', 'Gupta', 22);
+(1, 'Ayush', 'Gupta', '22');
 
 --
 -- Indexes for dumped tables

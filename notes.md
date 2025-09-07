@@ -541,3 +541,34 @@ MariaDB [ayushdb]> desc emp2;
 4 rows in set (0.061 sec)
 
 ```
+
+**Modify Table:**
+
+```
+MariaDB [ayushdb]> desc emp2;
++-------+--------------+------+-----+---------+-------+
+| Field | Type         | Null | Key | Default | Extra |
++-------+--------------+------+-----+---------+-------+
+| ID    | int(11)      | NO   |     | NULL    |       |
+| FN    | varchar(255) | YES  |     | NULL    |       |
+| LN    | varchar(255) | YES  |     | NULL    |       |
+| Age   | int(11)      | YES  |     | NULL    |       |
++-------+--------------+------+-----+---------+-------+
+4 rows in set (0.061 sec)
+
+MariaDB [ayushdb]> alter table emp2
+    -> modify column Age varchar(255);
+Query OK, 1 row affected (0.079 sec)
+Records: 1  Duplicates: 0  Warnings: 0
+
+MariaDB [ayushdb]> desc emp2;
++-------+--------------+------+-----+---------+-------+
+| Field | Type         | Null | Key | Default | Extra |
++-------+--------------+------+-----+---------+-------+
+| ID    | int(11)      | NO   |     | NULL    |       |
+| FN    | varchar(255) | YES  |     | NULL    |       |
+| LN    | varchar(255) | YES  |     | NULL    |       |
+| Age   | varchar(255) | YES  |     | NULL    |       |
++-------+--------------+------+-----+---------+-------+
+4 rows in set (0.039 sec)
+```

@@ -475,3 +475,69 @@ MariaDB [ayushdb]> select * from emp2
 +----+-------+-------+------+
 1 row in set (0.001 sec)
 ```
+
+### **Alter Table**
+**Alter table:** It is used to alter the table eather add or delete some thing in a table.
+
+
+**Adding a Column:**
+```
+MariaDB [ayushdb]> desc emp2;
++-------+--------------+------+-----+---------+-------+
+| Field | Type         | Null | Key | Default | Extra |
++-------+--------------+------+-----+---------+-------+
+| ID    | int(11)      | NO   |     | NULL    |       |
+| FN    | varchar(255) | YES  |     | NULL    |       |
+| LN    | varchar(255) | YES  |     | NULL    |       |
+| Age   | int(11)      | YES  |     | NULL    |       |
++-------+--------------+------+-----+---------+-------+
+4 rows in set (0.055 sec)
+
+MariaDB [ayushdb]> alter table emp2
+    -> add EZ varchar(255);
+Query OK, 0 rows affected (0.046 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+MariaDB [ayushdb]> desc emp2;
++-------+--------------+------+-----+---------+-------+
+| Field | Type         | Null | Key | Default | Extra |
++-------+--------------+------+-----+---------+-------+
+| ID    | int(11)      | NO   |     | NULL    |       |
+| FN    | varchar(255) | YES  |     | NULL    |       |
+| LN    | varchar(255) | YES  |     | NULL    |       |
+| Age   | int(11)      | YES  |     | NULL    |       |
+| EZ    | varchar(255) | YES  |     | NULL    |       |
++-------+--------------+------+-----+---------+-------+
+5 rows in set (0.063 sec)
+```
+**Deleating a column:**
+```
+MariaDB [ayushdb]> desc emp2;
++-------+--------------+------+-----+---------+-------+
+| Field | Type         | Null | Key | Default | Extra |
++-------+--------------+------+-----+---------+-------+
+| ID    | int(11)      | NO   |     | NULL    |       |
+| FN    | varchar(255) | YES  |     | NULL    |       |
+| LN    | varchar(255) | YES  |     | NULL    |       |
+| Age   | int(11)      | YES  |     | NULL    |       |
+| EZ    | varchar(255) | YES  |     | NULL    |       |
++-------+--------------+------+-----+---------+-------+
+5 rows in set (0.063 sec)
+
+MariaDB [ayushdb]> alter table emp2
+    -> drop column EZ;
+Query OK, 0 rows affected (0.042 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+MariaDB [ayushdb]> desc emp2;
++-------+--------------+------+-----+---------+-------+
+| Field | Type         | Null | Key | Default | Extra |
++-------+--------------+------+-----+---------+-------+
+| ID    | int(11)      | NO   |     | NULL    |       |
+| FN    | varchar(255) | YES  |     | NULL    |       |
+| LN    | varchar(255) | YES  |     | NULL    |       |
+| Age   | int(11)      | YES  |     | NULL    |       |
++-------+--------------+------+-----+---------+-------+
+4 rows in set (0.061 sec)
+
+```

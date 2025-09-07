@@ -331,19 +331,16 @@ VALUES (1, 'jack', 'sparrow', 40);
 | Duplicate Values Allowed? | ✅ Yes        | ❌ No                                                                   |
 | Uniqueness Enforced?      | ❌ No         | ✅ Yes                                                                  |
 | Count per Table           | Many columns | Only 1 primary key (but it can cover multiple columns = composite key) |
-
 ---
-
 👉 In short:
 
 * **Use `NOT NULL`** when a column must always have a value.
 * **Use `PRIMARY KEY`** when you want a column to uniquely identify each row.
-
-
-
 ---
 
 
+
+### **Foreign Key**
 **Foreign Key :**  is a key that is taken from the another table as a reference
   ```
    MariaDB [ayushdb]> create table dep(
@@ -355,6 +352,33 @@ VALUES (1, 'jack', 'sparrow', 40);
   Query OK, 0 rows affected (0.093 sec)
   ```
 `foreign key (ID) references demo1(ID));` is the command to connect the `ID` if `demo1` table to the ID in this table.
+
+
+### **Unique cornstrant**
+**Note:** A table can have only one Primary Key but van have many unique values
+
+**Input:**
+```
+MariaDB [ayushdb]> create table emp(
+    -> ID int not null,
+    -> FN varchar(255),
+    -> LN varchar(255),
+    -> unique(ID));
+Query OK, 0 rows affected (0.017 sec)
+```
+**Output:**
+```
+MariaDB [ayushdb]> desc emp
+    -> ;
++-------+--------------+------+-----+---------+-------+
+| Field | Type         | Null | Key | Default | Extra |
++-------+--------------+------+-----+---------+-------+
+| ID    | int(11)      | NO   | PRI | NULL    |       |
+| FN    | varchar(255) | YES  |     | NULL    |       |
+| LN    | varchar(255) | YES  |     | NULL    |       |
++-------+--------------+------+-----+---------+-------+
+3 rows in set (0.022 sec)
+```
 
 
 

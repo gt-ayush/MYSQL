@@ -339,10 +339,22 @@ VALUES (1, 'jack', 'sparrow', 40);
 * **Use `NOT NULL`** when a column must always have a value.
 * **Use `PRIMARY KEY`** when you want a column to uniquely identify each row.
 
-Would you like me to also add how to **modify your existing `demo` table to set `ID` as PRIMARY KEY AUTO\_INCREMENT** so you don’t need to insert IDs manually?
 
 
+---
 
+
+**Foreign Key :**  is a key that is taken from the another table as a reference
+  ```
+   MariaDB [ayushdb]> create table dep(
+    -> D_ID int not null,
+    -> D_n varchar(255) not null,
+    -> ID int,
+    -> primary key (D_ID),
+    -> foreign key (ID) references demo1(ID));
+  Query OK, 0 rows affected (0.093 sec)
+  ```
+`foreign key (ID) references demo1(ID));` is the command to connect the `ID` if `demo1` table to the ID in this table.
 
 
 

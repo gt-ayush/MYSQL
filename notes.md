@@ -286,6 +286,64 @@ VALUES (1, 'jack', 'sparrow', 40);
 
 
 
+### 📌 Difference between `NOT NULL` and `PRIMARY KEY`
+
+#### 🔹 `NOT NULL`
+
+* Ensures a column **cannot have NULL values**.
+* Does **not** enforce uniqueness → duplicate values are allowed.
+* Example:
+
+  ```sql
+  CREATE TABLE demo (
+    ID INT NOT NULL,
+    Name VARCHAR(100)
+  );
+  ```
+
+  * `ID` cannot be `NULL`, but can repeat (e.g., two rows with `ID = 1`).
+
+---
+
+#### 🔹 `PRIMARY KEY`
+
+* Combines **NOT NULL** + **UNIQUE**.
+* Ensures column values are **never NULL** and **must be unique**.
+* Every table can have **only one primary key**.
+* Example:
+
+  ```sql
+  CREATE TABLE emp (
+    ID INT PRIMARY KEY,
+    Name VARCHAR(100)
+  );
+  ```
+
+  * `ID` must be non-NULL and unique (no duplicates).
+
+---
+
+### ✅ Quick Comparison
+
+| Feature                   | NOT NULL     | PRIMARY KEY                                                            |
+| ------------------------- | ------------ | ---------------------------------------------------------------------- |
+| NULL Allowed?             | ❌ No         | ❌ No                                                                   |
+| Duplicate Values Allowed? | ✅ Yes        | ❌ No                                                                   |
+| Uniqueness Enforced?      | ❌ No         | ✅ Yes                                                                  |
+| Count per Table           | Many columns | Only 1 primary key (but it can cover multiple columns = composite key) |
+
+---
+
+👉 In short:
+
+* **Use `NOT NULL`** when a column must always have a value.
+* **Use `PRIMARY KEY`** when you want a column to uniquely identify each row.
+
+Would you like me to also add how to **modify your existing `demo` table to set `ID` as PRIMARY KEY AUTO\_INCREMENT** so you don’t need to insert IDs manually?
+
+
+
+
 
 
 

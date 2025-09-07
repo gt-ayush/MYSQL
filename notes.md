@@ -428,5 +428,50 @@ MariaDB [ayushdb]> select * from emp1
 2 rows in set (0.001 sec)
 ```
 
+### **Check constraint**
+**create a table:**
+```
+MariaDB [ayushdb]> create table emp2(
+    -> ID int not null,
+    -> FN varchar(255),
+    -> LN varchar(255),
+    -> Age int,
+    -> check(Age>20));
+Query OK, 0 rows affected (0.041 sec)
 
+MariaDB [ayushdb]> desc emp2;
++-------+--------------+------+-----+---------+-------+
+| Field | Type         | Null | Key | Default | Extra |
++-------+--------------+------+-----+---------+-------+
+| ID    | int(11)      | NO   |     | NULL    |       |
+| FN    | varchar(255) | YES  |     | NULL    |       |
+| LN    | varchar(255) | YES  |     | NULL    |       |
+| Age   | int(11)      | YES  |     | NULL    |       |
++-------+--------------+------+-----+---------+-------+
+4 rows in set (0.028 sec)
+```
+**Insert Values**
+```
+MariaDB [ayushdb]> insert into emp2 (ID, FN, LN, Age)
+    -> values(1,'Ayush','Gupta',18);
+ERROR 4025 (23000): CONSTRAINT `CONSTRAINT_1` failed for `ayushdb`.`emp2`
+MariaDB [ayushdb]> insert into emp2 (ID, FN, LN, Age)
+    -> values(1,'Ayush','Gupta',20);
+ERROR 4025 (23000): CONSTRAINT `CONSTRAINT_1` failed for `ayushdb`.`emp2`
+MariaDB [ayushdb]> insert into emp2 (ID, FN, LN, Age)
+    -> values(1,'Ayush','Gupta',22);
+Query OK, 1 row affected (0.003 sec)
+```
+**Note:** It is gibing error because we were tring to enter a age less than 20
 
+**Output:**
+```
+MariaDB [ayushdb]> select * from emp2
+    -> ;
++----+-------+-------+------+
+| ID | FN    | LN    | Age  |
++----+-------+-------+------+
+|  1 | Ayush | Gupta |   22 |
++----+-------+-------+------+
+1 row in set (0.001 sec)
+```

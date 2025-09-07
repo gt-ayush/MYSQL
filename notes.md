@@ -354,34 +354,79 @@ VALUES (1, 'jack', 'sparrow', 40);
 `foreign key (ID) references demo1(ID));` is the command to connect the `ID` if `demo1` table to the ID in this table.
 
 
-### **Unique cornstrant**
+### **Unique Constraint**
 **Note:** A table can have only one Primary Key but van have many unique values
 
 **Input:**
+  ```
+  MariaDB [ayushdb]> create table emp(
+      -> ID int not null,
+      -> FN varchar(255),
+      -> LN varchar(255),
+      -> unique(ID));
+  Query OK, 0 rows affected (0.017 sec)
+  ```
+
+
+**Output:**
+  ```
+  MariaDB [ayushdb]> desc emp
+      -> ;
+  +-------+--------------+------+-----+---------+-------+
+  | Field | Type         | Null | Key | Default | Extra |
+  +-------+--------------+------+-----+---------+-------+
+  | ID    | int(11)      | NO   | PRI | NULL    |       |
+  | FN    | varchar(255) | YES  |     | NULL    |       |
+  | LN    | varchar(255) | YES  |     | NULL    |       |
+  +-------+--------------+------+-----+---------+-------+
+  3 rows in set (0.022 sec)
+  ```
+### **Default Constraint**
+**Default Constraint:** It is used to set a `default value` in a table column.
+
+**Input:**
 ```
-MariaDB [ayushdb]> create table emp(
+MariaDB [ayushdb]> create table emp1(
     -> ID int not null,
     -> FN varchar(255),
     -> LN varchar(255),
-    -> unique(ID));
-Query OK, 0 rows affected (0.017 sec)
+    -> ED varchar(255) default 'oprations');
+Query OK, 0 rows affected (0.014 sec)
 ```
+  ` ED varchar(255) default 'oprations');` is the command to set default values.
+
 **Output:**
 ```
-MariaDB [ayushdb]> desc emp
+MariaDB [ayushdb]> desc emp1
     -> ;
-+-------+--------------+------+-----+---------+-------+
-| Field | Type         | Null | Key | Default | Extra |
-+-------+--------------+------+-----+---------+-------+
-| ID    | int(11)      | NO   | PRI | NULL    |       |
-| FN    | varchar(255) | YES  |     | NULL    |       |
-| LN    | varchar(255) | YES  |     | NULL    |       |
-+-------+--------------+------+-----+---------+-------+
-3 rows in set (0.022 sec)
++-------+--------------+------+-----+-----------+-------+
+| Field | Type         | Null | Key | Default   | Extra |
++-------+--------------+------+-----+-----------+-------+
+| ID    | int(11)      | NO   |     | NULL      |       |
+| FN    | varchar(255) | YES  |     | NULL      |       |
+| LN    | varchar(255) | YES  |     | NULL      |       |
+| ED    | varchar(255) | YES  |     | oprations |       |
++-------+--------------+------+-----+-----------+-------+
+4 rows in set (0.031 sec)
 ```
+**Inserting Value:**
+```
+MariaDB [ayushdb]> insert into emp1(ID,FN,LN)
+    -> value(1,'Ayush','Gupta'),
+    -> (2,'Moli','Gupta');
+Query OK, 2 rows affected (0.006 sec)
+Records: 2  Duplicates: 0  Warnings: 0
 
-
-
+MariaDB [ayushdb]> select * from emp1
+    -> ;
++----+-------+-------+-----------+
+| ID | FN    | LN    | ED        |
++----+-------+-------+-----------+
+|  1 | Ayush | Gupta | oprations |
+|  2 | Moli  | Gupta | oprations |
++----+-------+-------+-----------+
+2 rows in set (0.001 sec)
+```
 
 
 

@@ -640,3 +640,40 @@ MariaDB [ayushdb]> select * from emp
 +----+--------+------+------+-------+
 1 row in set (0.001 sec)
 ```
+
+
+**NOT OPRATOR**
+```
+MariaDB [ayushdb]> select * from emp;
++----+----------+-------+------+-------+
+| ID | FN       | LN    | AGE  | ZONE  |
++----+----------+-------+------+-------+
+|  1 | Ayush    | Gupta |   18 | North |
+|  2 | Sachin   | Sahu  |   29 | North |
+|  3 | pawan    | aaaa  |   18 | South |
+|  4 | abhishak | roun  |   18 | North |
++----+----------+-------+------+-------+
+4 rows in set (0.001 sec)
+
+MariaDB [ayushdb]> select * from emp
+    -> where not Age=29;
++----+----------+-------+------+-------+
+| ID | FN       | LN    | AGE  | ZONE  |
++----+----------+-------+------+-------+
+|  1 | Ayush    | Gupta |   18 | North |
+|  3 | pawan    | aaaa  |   18 | South |
+|  4 | abhishak | roun  |   18 | North |
++----+----------+-------+------+-------+
+3 rows in set (0.001 sec)
+
+MariaDB [ayushdb]> select * from emp
+    -> where not zone='south';
++----+----------+-------+------+-------+
+| ID | FN       | LN    | AGE  | ZONE  |
++----+----------+-------+------+-------+
+|  1 | Ayush    | Gupta |   18 | North |
+|  2 | Sachin   | Sahu  |   29 | North |
+|  4 | abhishak | roun  |   18 | North |
++----+----------+-------+------+-------+
+3 rows in set (0.001 sec)
+```

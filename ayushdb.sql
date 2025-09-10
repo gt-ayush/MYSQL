@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 07, 2025 at 07:15 PM
+-- Generation Time: Sep 10, 2025 at 01:51 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -30,8 +30,20 @@ SET time_zone = "+00:00";
 CREATE TABLE `emp` (
   `ID` int(11) NOT NULL,
   `FN` varchar(255) DEFAULT NULL,
-  `LN` varchar(255) DEFAULT NULL
+  `LN` varchar(255) DEFAULT NULL,
+  `AGE` int(11) DEFAULT NULL,
+  `ZONE` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `emp`
+--
+
+INSERT INTO `emp` (`ID`, `FN`, `LN`, `AGE`, `ZONE`) VALUES
+(1, 'Ayush', 'Gupta', 18, 'North'),
+(2, 'Sachin', 'Sahu', 29, 'North'),
+(3, 'pawan', 'aaaa', 18, 'South'),
+(4, 'abhishak', 'roun', 18, 'North');
 
 -- --------------------------------------------------------
 

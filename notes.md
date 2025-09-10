@@ -784,3 +784,22 @@ MariaDB [ayushdb]> select * from emp
 +----+----------+-------+------+-------+
 4 rows in set (0.001 sec)
 ```
+`Example 4`
+```
+MariaDB [ayushdb]> select * from emp
+    -> where zone like '___t_';
++----+----------+-------+------+-------+
+| ID | FN       | LN    | AGE  | ZONE  |
++----+----------+-------+------+-------+
+|  1 | Ayush    | Gupta |   18 | North |
+|  2 | Sachin   | Sahu  |   29 | North |
+|  3 | pawan    | aaaa  |   18 | South |
+|  4 | abhishak | roun  |   18 | North |
++----+----------+-------+------+-------+
+4 rows in set (0.001 sec)
+
+MariaDB [ayushdb]> select * from emp
+    -> where zone like '___t';
+Empty set (0.001 sec)
+
+```

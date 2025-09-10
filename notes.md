@@ -721,3 +721,40 @@ MariaDB [ayushdb]> select * from emp
 +----+----------+------+------+-------+
 2 rows in set (0.001 sec)
 ```
+
+**LIKE oprator**
+
+`example 1`
+```
+MariaDB [ayushdb]> select * from emp;
++----+----------+-------+------+-------+
+| ID | FN       | LN    | AGE  | ZONE  |
++----+----------+-------+------+-------+
+|  1 | Ayush    | Gupta |   18 | North |
+|  2 | Sachin   | Sahu  |   29 | North |
+|  3 | pawan    | aaaa  |   18 | South |
+|  4 | abhishak | roun  |   18 | North |
++----+----------+-------+------+-------+
+4 rows in set (0.001 sec)
+
+MariaDB [ayushdb]> select * from emp
+    -> where fn like 'a%';
++----+----------+-------+------+-------+
+| ID | FN       | LN    | AGE  | ZONE  |
++----+----------+-------+------+-------+
+|  1 | Ayush    | Gupta |   18 | North |
+|  4 | abhishak | roun  |   18 | North |
++----+----------+-------+------+-------+
+2 rows in set (0.001 sec)
+```
+`example 2`
+```
+MariaDB [ayushdb]> select * from emp
+    -> where ln like 's%';
++----+--------+------+------+-------+
+| ID | FN     | LN   | AGE  | ZONE  |
++----+--------+------+------+-------+
+|  2 | Sachin | Sahu |   29 | North |
++----+--------+------+------+-------+
+1 row in set (0.001 sec)
+```

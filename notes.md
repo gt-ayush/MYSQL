@@ -803,3 +803,44 @@ MariaDB [ayushdb]> select * from emp
 Empty set (0.001 sec)
 
 ```
+
+**Between**
+
+```
+MariaDB [ayushdb]> select * from emp
+    -> ;
+ERROR 2006 (HY000): MySQL server has gone away
+No connection. Trying to reconnect...
+Connection id:    88
+Current database: ayushdb
+
++----+----------+-------+------+-------+
+| ID | FN       | LN    | AGE  | ZONE  |
++----+----------+-------+------+-------+
+|  1 | Ayush    | Gupta |   18 | North |
+|  2 | Sachin   | Sahu  |   29 | North |
+|  3 | pawan    | aaaa  |   18 | South |
+|  4 | abhishak | roun  |   18 | North |
++----+----------+-------+------+-------+
+4 rows in set (0.012 sec)
+
+MariaDB [ayushdb]> select * from emp
+    -> where age between 25 and 30;
++----+--------+------+------+-------+
+| ID | FN     | LN   | AGE  | ZONE  |
++----+--------+------+------+-------+
+|  2 | Sachin | Sahu |   29 | North |
++----+--------+------+------+-------+
+1 row in set (0.001 sec)
+
+MariaDB [ayushdb]> select * from emp
+    -> where age not between 25 and 30;
++----+----------+-------+------+-------+
+| ID | FN       | LN    | AGE  | ZONE  |
++----+----------+-------+------+-------+
+|  1 | Ayush    | Gupta |   18 | North |
+|  3 | pawan    | aaaa  |   18 | South |
+|  4 | abhishak | roun  |   18 | North |
++----+----------+-------+------+-------+
+3 rows in set (0.001 sec)
+```

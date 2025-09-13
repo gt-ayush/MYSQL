@@ -844,3 +844,67 @@ MariaDB [ayushdb]> select * from emp
 +----+----------+-------+------+-------+
 3 rows in set (0.001 sec)
 ```
+
+**CASE**
+```
+MariaDB [ayushdb]> select * from emp;
++----+--------+----------+------+------------+
+| ID | FN     | LN       | AGE  | ZONE       |
++----+--------+----------+------+------------+
+|  1 | Ayush  | Sharma   |   28 | North      |
+|  2 | Priya  | Verma    |   34 | East       |
+|  3 | Rohan  | Mehta    |   41 | West       |
+|  4 | Sneha  | Patel    |   25 | South      |
+|  5 | Karan  | Singh    |   30 | Central    |
+|  6 | Neha   | Jain     |   29 | North-East |
+|  7 | Arjun  | Reddy    |   38 | South-West |
+|  8 | Divya  | Kapoor   |   33 | North-West |
+|  9 | Vikram | Joshi    |   45 | East       |
+| 10 | Meera  | Nair     |   27 | South-East |
+| 11 | Tanvi  | Chopra   |   26 | North      |
+| 12 | Aman   | Gill     |   32 | West       |
+| 13 | Ritika | Malhotra |   24 | South-East |
+| 14 | Harsh  | Thakur   |   37 | Central    |
+| 15 | Simran | Kaur     |   31 | North-East |
+| 16 | Rajeev | Bansal   |   40 | South-West |
+| 17 | Isha   | Arora    |   28 | East       |
+| 18 | Nikhil | Dey      |   35 | North-West |
+| 19 | Tanya  | Mishra   |   30 | South      |
+| 20 | Yuvraj | Chandel  |   42 | West       |
++----+--------+----------+------+------------+
+20 rows in set (0.001 sec)
+
+MariaDB [ayushdb]> select fn,ln,age,
+    -> case
+    -> when age > 25 then 'EMPLOYEE WITH EXPRIWNCE.'
+    -> when age = 25 then 'EMP is mid-experieanced level'
+    -> else 'freshers... new to company'
+    -> end as eligibility
+    -> from emp;
++--------+----------+------+-------------------------------+
+| fn     | ln       | age  | eligibility                   |
++--------+----------+------+-------------------------------+
+| Ayush  | Sharma   |   28 | EMPLOYEE WITH EXPRIWNCE.      |
+| Priya  | Verma    |   34 | EMPLOYEE WITH EXPRIWNCE.      |
+| Rohan  | Mehta    |   41 | EMPLOYEE WITH EXPRIWNCE.      |
+| Sneha  | Patel    |   25 | EMP is mid-experieanced level |
+| Karan  | Singh    |   30 | EMPLOYEE WITH EXPRIWNCE.      |
+| Neha   | Jain     |   29 | EMPLOYEE WITH EXPRIWNCE.      |
+| Arjun  | Reddy    |   38 | EMPLOYEE WITH EXPRIWNCE.      |
+| Divya  | Kapoor   |   33 | EMPLOYEE WITH EXPRIWNCE.      |
+| Vikram | Joshi    |   45 | EMPLOYEE WITH EXPRIWNCE.      |
+| Meera  | Nair     |   27 | EMPLOYEE WITH EXPRIWNCE.      |
+| Tanvi  | Chopra   |   26 | EMPLOYEE WITH EXPRIWNCE.      |
+| Aman   | Gill     |   32 | EMPLOYEE WITH EXPRIWNCE.      |
+| Ritika | Malhotra |   24 | freshers... new to company    |
+| Harsh  | Thakur   |   37 | EMPLOYEE WITH EXPRIWNCE.      |
+| Simran | Kaur     |   31 | EMPLOYEE WITH EXPRIWNCE.      |
+| Rajeev | Bansal   |   40 | EMPLOYEE WITH EXPRIWNCE.      |
+| Isha   | Arora    |   28 | EMPLOYEE WITH EXPRIWNCE.      |
+| Nikhil | Dey      |   35 | EMPLOYEE WITH EXPRIWNCE.      |
+| Tanya  | Mishra   |   30 | EMPLOYEE WITH EXPRIWNCE.      |
+| Yuvraj | Chandel  |   42 | EMPLOYEE WITH EXPRIWNCE.      |
++--------+----------+------+-------------------------------+
+20 rows in set (0.001 sec)
+
+```

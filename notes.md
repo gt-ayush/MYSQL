@@ -1019,3 +1019,14 @@ MariaDB [ayushdb]> select sum(age) as result from emp;
 +--------+
 1 row in set (0.001 sec)
 ```
+
+**AVG()**
+```
+MariaDB [ayushdb]> select avg(age) from emp;
++----------+
+| avg(age) |
++----------+
+|  32.7500 |
++----------+
+1 row in set (0.002 sec)
+```

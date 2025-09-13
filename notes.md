@@ -999,3 +999,23 @@ MariaDB [ayushdb]> select *
 +----+--------+----------+------+------------+
 20 rows in set (0.001 sec)
 ```
+
+**SUM()**
+
+```
+MariaDB [ayushdb]> select sum(age) from emp;
++----------+
+| sum(age) |
++----------+
+|      655 |
++----------+
+1 row in set (0.001 sec)
+
+MariaDB [ayushdb]> select sum(age) as result from emp;
++--------+
+| result |
++--------+
+|    655 |
++--------+
+1 row in set (0.001 sec)
+```

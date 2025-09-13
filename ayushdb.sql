@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 10, 2025 at 01:51 PM
+-- Generation Time: Sep 13, 2025 at 08:41 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -40,10 +40,26 @@ CREATE TABLE `emp` (
 --
 
 INSERT INTO `emp` (`ID`, `FN`, `LN`, `AGE`, `ZONE`) VALUES
-(1, 'Ayush', 'Gupta', 18, 'North'),
-(2, 'Sachin', 'Sahu', 29, 'North'),
-(3, 'pawan', 'aaaa', 18, 'South'),
-(4, 'abhishak', 'roun', 18, 'North');
+(1, 'Ayush', 'Sharma', 28, 'North'),
+(2, 'Priya', 'Verma', 34, 'East'),
+(3, 'Rohan', 'Mehta', 41, 'West'),
+(4, 'Sneha', 'Patel', 25, 'South'),
+(5, 'Karan', 'Singh', 30, 'Central'),
+(6, 'Neha', 'Jain', 29, 'North-East'),
+(7, 'Arjun', 'Reddy', 38, 'South-West'),
+(8, 'Divya', 'Kapoor', 33, 'North-West'),
+(9, 'Vikram', 'Joshi', 45, 'East'),
+(10, 'Meera', 'Nair', 27, 'South-East'),
+(11, 'Tanvi', 'Chopra', 26, 'North'),
+(12, 'Aman', 'Gill', 32, 'West'),
+(13, 'Ritika', 'Malhotra', 24, 'South-East'),
+(14, 'Harsh', 'Thakur', 37, 'Central'),
+(15, 'Simran', 'Kaur', 31, 'North-East'),
+(16, 'Rajeev', 'Bansal', 40, 'South-West'),
+(17, 'Isha', 'Arora', 28, 'East'),
+(18, 'Nikhil', 'Dey', 35, 'North-West'),
+(19, 'Tanya', 'Mishra', 30, 'South'),
+(20, 'Yuvraj', 'Chandel', 42, 'West');
 
 -- --------------------------------------------------------
 

@@ -1030,3 +1030,57 @@ MariaDB [ayushdb]> select avg(age) from emp;
 +----------+
 1 row in set (0.002 sec)
 ```
+
+**count()**
+```
+MariaDB [ayushdb]> select * from emp;
++----+--------+----------+------+------------+
+| ID | FN     | LN       | AGE  | ZONE       |
++----+--------+----------+------+------------+
+|  1 | Ayush  | Sharma   |   28 | North      |
+|  2 | Priya  | Verma    |   34 | East       |
+|  3 | Rohan  | Mehta    |   41 | West       |
+|  4 | Sneha  | Patel    |   25 | South      |
+|  5 | Karan  | Singh    |   30 | Central    |
+|  6 | Neha   | Jain     |   29 | North-East |
+|  7 | Arjun  | Reddy    |   38 | South-West |
+|  8 | Divya  | Kapoor   |   33 | North-West |
+|  9 | Vikram | Joshi    |   45 | East       |
+| 10 | Meera  | Nair     |   27 | South-East |
+| 11 | Tanvi  | Chopra   |   26 | North      |
+| 12 | Aman   | Gill     |   32 | West       |
+| 13 | Ritika | Malhotra |   24 | South-East |
+| 14 | Harsh  | Thakur   |   37 | Central    |
+| 15 | Simran | Kaur     |   31 | North-East |
+| 16 | Rajeev | Bansal   |   40 | South-West |
+| 17 | Isha   | Arora    |   28 | East       |
+| 18 | Nikhil | Dey      |   35 | North-West |
+| 19 | Tanya  | Mishra   |   30 | South      |
+| 20 | Yuvraj | Chandel  |   42 | West       |
++----+--------+----------+------+------------+
+20 rows in set (0.076 sec)
+
+MariaDB [ayushdb]> select count(age) from emp where age=30;
++------------+
+| count(age) |
++------------+
+|          2 |
++------------+
+1 row in set (0.001 sec)
+
+MariaDB [ayushdb]> select count(*) from emp;
++----------+
+| count(*) |
++----------+
+|       20 |
++----------+
+1 row in set (0.001 sec)
+
+MariaDB [ayushdb]> select count(age) from emp;
++------------+
+| count(age) |
++------------+
+|         20 |
++------------+
+1 row in set (0.001 sec)
+```

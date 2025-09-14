@@ -1084,3 +1084,13 @@ MariaDB [ayushdb]> select count(age) from emp;
 +------------+
 1 row in set (0.001 sec)
 ```
+**MAX()**
+```
+MariaDB [ayushdb]> select max(age) from emp;
++----------+
+| max(age) |
++----------+
+|       45 |
++----------+
+1 row in set (0.001 sec)
+```

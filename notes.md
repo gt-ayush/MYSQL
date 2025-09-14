@@ -1094,3 +1094,13 @@ MariaDB [ayushdb]> select max(age) from emp;
 +----------+
 1 row in set (0.001 sec)
 ```
+**min()**
+```
+MariaDB [ayushdb]> select min(age) from emp;
++----------+
+| min(age) |
++----------+
+|       24 |
++----------+
+1 row in set (0.001 sec)
+```

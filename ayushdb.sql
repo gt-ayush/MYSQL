@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 13, 2025 at 08:41 PM
+-- Generation Time: Sep 18, 2025 at 07:40 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -46,14 +46,13 @@ INSERT INTO `emp` (`ID`, `FN`, `LN`, `AGE`, `ZONE`) VALUES
 (4, 'Sneha', 'Patel', 25, 'South'),
 (5, 'Karan', 'Singh', 30, 'Central'),
 (6, 'Neha', 'Jain', 29, 'North-East'),
-(7, 'Arjun', 'Reddy', 38, 'South-West'),
 (8, 'Divya', 'Kapoor', 33, 'North-West'),
 (9, 'Vikram', 'Joshi', 45, 'East'),
 (10, 'Meera', 'Nair', 27, 'South-East'),
 (11, 'Tanvi', 'Chopra', 26, 'North'),
 (12, 'Aman', 'Gill', 32, 'West'),
 (13, 'Ritika', 'Malhotra', 24, 'South-East'),
-(14, 'Harsh', 'Thakur', 37, 'Central'),
+(14, 'Harsh', 'Thakur', 18, 'Central'),
 (15, 'Simran', 'Kaur', 31, 'North-East'),
 (16, 'Rajeev', 'Bansal', 40, 'South-West'),
 (17, 'Isha', 'Arora', 28, 'East'),
@@ -73,14 +72,6 @@ CREATE TABLE `emp1` (
   `LN` varchar(255) DEFAULT NULL,
   `ED` varchar(255) DEFAULT 'oprations'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `emp1`
---
-
-INSERT INTO `emp1` (`ID`, `FN`, `LN`, `ED`) VALUES
-(1, 'Ayush', 'Gupta', 'oprations'),
-(2, 'Moli', 'Gupta', 'oprations');
 
 -- --------------------------------------------------------
 

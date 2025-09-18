@@ -1212,4 +1212,30 @@ MariaDB [ayushdb]> select * from emp;
 +----+--------+----------+------+------------+
 19 rows in set (0.001 sec)
 
+
+MariaDB [ayushdb]> select * from emp1;
++----+-------+-------+-----------+
+| ID | FN    | LN    | ED        |
++----+-------+-------+-----------+
+|  1 | Ayush | Gupta | oprations |
+|  2 | Moli  | Gupta | oprations |
++----+-------+-------+-----------+
+2 rows in set (0.037 sec)
+
+MariaDB [ayushdb]> delete from emp1;
+Query OK, 2 rows affected (0.034 sec)
+
+MariaDB [ayushdb]> select * from emp1;
+Empty set (0.002 sec)
+
+MariaDB [ayushdb]> desc emp1;
++-------+--------------+------+-----+-----------+-------+
+| Field | Type         | Null | Key | Default   | Extra |
++-------+--------------+------+-----+-----------+-------+
+| ID    | int(11)      | NO   |     | NULL      |       |
+| FN    | varchar(255) | YES  |     | NULL      |       |
+| LN    | varchar(255) | YES  |     | NULL      |       |
+| ED    | varchar(255) | YES  |     | oprations |       |
++-------+--------------+------+-----+-----------+-------+
+4 rows in set (0.062 sec)
 ```

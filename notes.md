@@ -1140,4 +1140,14 @@ MariaDB [ayushdb]> select * from emp;
 | 20 | Yuvraj | Chandel  |   42 | West       |
 +----+--------+----------+------+------------+
 20 rows in set (0.001 sec)
+
+MariaDB [ayushdb]> update emp
+    -> set age=26
+    -> where fn="arjun";
+No connection. Trying to reconnect...
+Connection id:    8
+Current database: ayushdb
+
+Query OK, 1 row affected (0.037 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
 ```

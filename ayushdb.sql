@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 18, 2025 at 09:01 PM
+-- Generation Time: Sep 18, 2025 at 09:04 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -130,7 +130,6 @@ ALTER TABLE `emp`
 --
 ALTER TABLE `emp3`
   ADD PRIMARY KEY (`ID`),
-  ADD KEY `demoindex` (`fn`),
   ADD KEY `demoindex2` (`fn`,`ln`,`zone`);
 
 --

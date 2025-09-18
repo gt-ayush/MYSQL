@@ -1486,3 +1486,46 @@ MariaDB [ayushdb]> select * from emp3;
 +----+--------+-------+-----+-------+
 2 rows in set (0.001 sec)
 ```
+### **Creating an index**
+
+```
+MariaDB [ayushdb]> create index demoindex
+    -> on emp3(fn);
+Query OK, 0 rows affected (0.050 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+MariaDB [ayushdb]> create index demoindex2
+    -> on emp3(fn,ln,zone);
+Query OK, 0 rows affected (0.045 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+MariaDB [ayushdb]> show indexes from emp3;
++-------+------------+------------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+
+| Table | Non_unique | Key_name   | Seq_in_index | Column_name | Collation | Cardinality | Sub_part | Packed | Null | Index_type | Comment | Index_comment |
++-------+------------+------------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+
+| emp3  |          0 | PRIMARY    |            1 | ID          | A         |           2 |     NULL | NULL   |      | BTREE      |         |               |
+| emp3  |          1 | demoindex  |            1 | fn          | A         |           2 |     NULL | NULL   | YES  | BTREE      |         |               |
+| emp3  |          1 | demoindex2 |            1 | fn          | A         |           2 |     NULL | NULL   | YES  | BTREE      |         |               |
+| emp3  |          1 | demoindex2 |            2 | ln          | A         |           2 |     NULL | NULL   | YES  | BTREE      |         |               |
+| emp3  |          1 | demoindex2 |            3 | zone        | A         |           2 |     NULL | NULL   | YES  | BTREE      |         |               |
++-------+------------+------------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+
+5 rows in set (0.001 sec)
+```
+
+**Dleating an index(crop index)**
+```
+MariaDB [ayushdb]> drop index demoindex on emp3;
+Query OK, 0 rows affected (0.043 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+MariaDB [ayushdb]> show indexes from emp3;
++-------+------------+------------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+
+| Table | Non_unique | Key_name   | Seq_in_index | Column_name | Collation | Cardinality | Sub_part | Packed | Null | Index_type | Comment | Index_comment |
++-------+------------+------------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+
+| emp3  |          0 | PRIMARY    |            1 | ID          | A         |           2 |     NULL | NULL   |      | BTREE      |         |               |
+| emp3  |          1 | demoindex2 |            1 | fn          | A         |           2 |     NULL | NULL   | YES  | BTREE      |         |               |
+| emp3  |          1 | demoindex2 |            2 | ln          | A         |           2 |     NULL | NULL   | YES  | BTREE      |         |               |
+| emp3  |          1 | demoindex2 |            3 | zone        | A         |           2 |     NULL | NULL   | YES  | BTREE      |         |               |
++-------+------------+------------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+
+4 rows in set (0.001 sec)
+```

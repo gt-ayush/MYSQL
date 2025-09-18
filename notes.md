@@ -1363,3 +1363,83 @@ MariaDB [ayushdb]> select * from emp
 +----+-------+--------+------+-------+
 3 rows in set (0.001 sec)
 ```
+### **Alis**
+```
+MariaDB [ayushdb]> select * from emp;
++----+--------+----------+------+------------+
+| ID | FN     | LN       | AGE  | ZONE       |
++----+--------+----------+------+------------+
+|  1 | Ayush  | Sharma   |   28 | North      |
+|  2 | Priya  | Verma    |   34 | East       |
+|  3 | Rohan  | Mehta    |   41 | West       |
+|  4 | Sneha  | Patel    |   25 | South      |
+|  5 | Karan  | Singh    |   30 | Central    |
+|  6 | Neha   | Jain     |   29 | North-East |
+|  8 | Divya  | Kapoor   |   33 | North-West |
+|  9 | Vikram | Joshi    |   45 | East       |
+| 10 | Meera  | Nair     |   27 | South-East |
+| 11 | Tanvi  | Chopra   |   26 | North      |
+| 12 | Aman   | Gill     |   32 | West       |
+| 13 | Ritika | Malhotra |   24 | South-East |
+| 14 | Harsh  | Thakur   |   18 | Central    |
+| 15 | Simran | Kaur     |   31 | North-East |
+| 16 | Rajeev | Bansal   |   40 | South-West |
+| 17 | Isha   | Arora    |   28 | East       |
+| 18 | Nikhil | Dey      |   35 | North-West |
+| 19 | Tanya  | Mishra   |   30 | South      |
+| 20 | Yuvraj | Chandel  |   42 | West       |
++----+--------+----------+------+------------+
+19 rows in set (0.001 sec)
+
+MariaDB [ayushdb]> select age as age_of_employes from emp;
++-----------------+
+| age_of_employes |
++-----------------+
+|              28 |
+|              34 |
+|              41 |
+|              25 |
+|              30 |
+|              29 |
+|              33 |
+|              45 |
+|              27 |
+|              26 |
+|              32 |
+|              24 |
+|              18 |
+|              31 |
+|              40 |
+|              28 |
+|              35 |
+|              30 |
+|              42 |
++-----------------+
+19 rows in set (0.000 sec)
+
+MariaDB [ayushdb]> select fn as First_name,ln as last_name from emp;
++------------+-----------+
+| First_name | last_name |
++------------+-----------+
+| Ayush      | Sharma    |
+| Priya      | Verma     |
+| Rohan      | Mehta     |
+| Sneha      | Patel     |
+| Karan      | Singh     |
+| Neha       | Jain      |
+| Divya      | Kapoor    |
+| Vikram     | Joshi     |
+| Meera      | Nair      |
+| Tanvi      | Chopra    |
+| Aman       | Gill      |
+| Ritika     | Malhotra  |
+| Harsh      | Thakur    |
+| Simran     | Kaur      |
+| Rajeev     | Bansal    |
+| Isha       | Arora     |
+| Nikhil     | Dey       |
+| Tanya      | Mishra    |
+| Yuvraj     | Chandel   |
++------------+-----------+
+19 rows in set (0.001 sec)
+```

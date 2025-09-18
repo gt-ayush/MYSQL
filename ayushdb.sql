@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 18, 2025 at 07:40 PM
+-- Generation Time: Sep 18, 2025 at 08:51 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -93,6 +93,28 @@ CREATE TABLE `emp2` (
 INSERT INTO `emp2` (`ID`, `FN`, `LN`, `Age`) VALUES
 (1, 'Ayush', 'Gupta', '22');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `emp3`
+--
+
+CREATE TABLE `emp3` (
+  `ID` int(11) NOT NULL,
+  `fn` varchar(255) DEFAULT NULL,
+  `ln` varchar(255) DEFAULT NULL,
+  `age` int(11) NOT NULL,
+  `zone` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `emp3`
+--
+
+INSERT INTO `emp3` (`ID`, `fn`, `ln`, `age`, `zone`) VALUES
+(1, 'Ayush', 'gupta', 18, 'north'),
+(2, 'Piyush', 'Gupta', 13, 'north');
+
 --
 -- Indexes for dumped tables
 --
@@ -102,6 +124,22 @@ INSERT INTO `emp2` (`ID`, `FN`, `LN`, `Age`) VALUES
 --
 ALTER TABLE `emp`
   ADD UNIQUE KEY `ID` (`ID`);
+
+--
+-- Indexes for table `emp3`
+--
+ALTER TABLE `emp3`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `emp3`
+--
+ALTER TABLE `emp3`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

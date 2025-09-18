@@ -1363,7 +1363,7 @@ MariaDB [ayushdb]> select * from emp
 +----+-------+--------+------+-------+
 3 rows in set (0.001 sec)
 ```
-### **Alis**
+### **Alis --(AS)**
 ```
 MariaDB [ayushdb]> select * from emp;
 +----+--------+----------+------+------------+
@@ -1442,4 +1442,47 @@ MariaDB [ayushdb]> select fn as First_name,ln as last_name from emp;
 | Yuvraj     | Chandel   |
 +------------+-----------+
 19 rows in set (0.001 sec)
+```
+
+### **Auto_Increment**
+```
+MariaDB [ayushdb]> create table emp3(
+    -> ID int not null auto_increment,
+    -> fn varchar(255),
+    -> ln varchar(255),
+    -> age int not null,
+    -> zone varchar(255),
+    -> primary key (ID));
+Query OK, 0 rows affected (0.060 sec)
+
+MariaDB [ayushdb]> desc emp3;
++-------+--------------+------+-----+---------+----------------+
+| Field | Type         | Null | Key | Default | Extra          |
++-------+--------------+------+-----+---------+----------------+
+| ID    | int(11)      | NO   | PRI | NULL    | auto_increment |
+| fn    | varchar(255) | YES  |     | NULL    |                |
+| ln    | varchar(255) | YES  |     | NULL    |                |
+| age   | int(11)      | NO   |     | NULL    |                |
+| zone  | varchar(255) | YES  |     | NULL    |                |
++-------+--------------+------+-----+---------+----------------+
+5 rows in set (0.052 sec)
+
+MariaDB [ayushdb]> insert into emp3(fn,ln,age,zone)
+    -> values('Ayush','gupta',18,'north')
+    -> ('Piyush','Gupta',13,'north');
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '('Piyush','Gupta',13,'north')' at line 3
+MariaDB [ayushdb]> insert into emp3(fn,ln,age,zone)
+    -> values('Ayush','gupta',18,'north'),
+    -> ('Piyush','Gupta',13,'north');
+Query OK, 2 rows affected (0.034 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+MariaDB [ayushdb]> select * from emp3;
++----+--------+-------+-----+-------+
+| ID | fn     | ln    | age | zone  |
++----+--------+-------+-----+-------+
+|  1 | Ayush  | gupta |  18 | north |
+|  2 | Piyush | Gupta |  13 | north |
++----+--------+-------+-----+-------+
+2 rows in set (0.001 sec)
 ```

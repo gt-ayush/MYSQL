@@ -1669,3 +1669,70 @@ MariaDB [ayushdb]> select emp.id,emp3.ln from emp3
 +------+---------+
 4 rows in set (0.001 sec)
 ```
+### **RIGHT JOIN**
+```sql
+MariaDB [ayushdb]> select * from emp;
++----+--------+----------+------+------------+
+| ID | FN     | LN       | AGE  | ZONE       |
++----+--------+----------+------+------------+
+|  1 | Ayush  | Sharma   |   28 | North      |
+|  2 | Priya  | Verma    |   34 | East       |
+|  3 | Rohan  | Mehta    |   41 | West       |
+|  4 | Sneha  | Patel    |   25 | South      |
+|  5 | Karan  | Singh    |   30 | Central    |
+|  6 | Neha   | Jain     |   29 | North-East |
+|  8 | Divya  | Kapoor   |   33 | North-West |
+|  9 | Vikram | Joshi    |   45 | East       |
+| 10 | Meera  | Nair     |   27 | South-East |
+| 11 | Tanvi  | Chopra   |   26 | North      |
+| 12 | Aman   | Gill     |   32 | West       |
+| 13 | Ritika | Malhotra |   24 | South-East |
+| 14 | Harsh  | Thakur   |   18 | Central    |
+| 15 | Simran | Kaur     |   31 | North-East |
+| 16 | Rajeev | Bansal   |   40 | South-West |
+| 17 | Isha   | Arora    |   28 | East       |
+| 18 | Nikhil | Dey      |   35 | North-West |
+| 19 | Tanya  | Mishra   |   30 | South      |
+| 20 | Yuvraj | Chandel  |   42 | West       |
++----+--------+----------+------+------------+
+19 rows in set (0.001 sec)
+
+MariaDB [ayushdb]> select * from emp3;
++----+----------+---------+-----+-------+
+| ID | fn       | ln      | age | zone  |
++----+----------+---------+-----+-------+
+|  1 | Ayush    | gupta   |  18 | north |
+|  2 | Piyush   | Gupta   |  13 | north |
+|  7 | sdafadfa | afadfad |  90 | south |
+|  8 | dfa      | adfsf   |  45 | west  |
++----+----------+---------+-----+-------+
+4 rows in set (0.001 sec)
+
+MariaDB [ayushdb]> select emp.id,emp3.ln from emp3
+    -> right join emp on emp.id = emp3.id
+    -> ;
++----+-------+
+| id | ln    |
++----+-------+
+|  1 | gupta |
+|  2 | Gupta |
+|  3 | NULL  |
+|  4 | NULL  |
+|  5 | NULL  |
+|  6 | NULL  |
+|  8 | adfsf |
+|  9 | NULL  |
+| 10 | NULL  |
+| 11 | NULL  |
+| 12 | NULL  |
+| 13 | NULL  |
+| 14 | NULL  |
+| 15 | NULL  |
+| 16 | NULL  |
+| 17 | NULL  |
+| 18 | NULL  |
+| 19 | NULL  |
+| 20 | NULL  |
++----+-------+
+19 rows in set (0.001 sec)
+```

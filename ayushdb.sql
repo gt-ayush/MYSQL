@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 19, 2025 at 03:54 PM
+-- Generation Time: Sep 19, 2025 at 04:06 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -98,24 +98,8 @@ INSERT INTO `emp2` (`ID`, `FN`, `LN`, `Age`) VALUES
 --
 -- Table structure for table `emp3`
 --
-
-CREATE TABLE `emp3` (
-  `ID` int(11) NOT NULL,
-  `fn` varchar(255) DEFAULT NULL,
-  `ln` varchar(255) DEFAULT NULL,
-  `age` int(11) NOT NULL,
-  `zone` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `emp3`
---
-
-INSERT INTO `emp3` (`ID`, `fn`, `ln`, `age`, `zone`) VALUES
-(1, 'Ayush', 'gupta', 18, 'north'),
-(2, 'Piyush', 'Gupta', 13, 'north'),
-(7, 'sdafadfa', 'afadfad', 90, 'south'),
-(8, 'dfa', 'adfsf', 45, 'west');
+-- Error reading structure for table ayushdb.emp3: #1146 - Table &#039;ayushdb.emp3&#039; doesn&#039;t exist
+-- Error reading data for table ayushdb.emp3: #1064 - You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near &#039;FROM `ayushdb`.`emp3`&#039; at line 1
 
 --
 -- Indexes for dumped tables
@@ -126,23 +110,6 @@ INSERT INTO `emp3` (`ID`, `fn`, `ln`, `age`, `zone`) VALUES
 --
 ALTER TABLE `emp`
   ADD UNIQUE KEY `ID` (`ID`);
-
---
--- Indexes for table `emp3`
---
-ALTER TABLE `emp3`
-  ADD PRIMARY KEY (`ID`),
-  ADD KEY `demoindex2` (`fn`,`ln`,`zone`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `emp3`
---
-ALTER TABLE `emp3`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

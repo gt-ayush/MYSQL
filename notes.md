@@ -342,7 +342,7 @@ VALUES (1, 'jack', 'sparrow', 40);
 
 ### **Foreign Key**
 **Foreign Key :**  is a key that is taken from the another table as a reference
-  ```
+  ```sql
    MariaDB [ayushdb]> create table dep(
     -> D_ID int not null,
     -> D_n varchar(255) not null,
@@ -358,7 +358,7 @@ VALUES (1, 'jack', 'sparrow', 40);
 **Note:** A table can have only one Primary Key but van have many unique values
 
 **Input:**
-  ```
+  ```sql
   MariaDB [ayushdb]> create table emp(
       -> ID int not null,
       -> FN varchar(255),
@@ -369,7 +369,7 @@ VALUES (1, 'jack', 'sparrow', 40);
 
 
 **Output:**
-  ```
+  ```sql
   MariaDB [ayushdb]> desc emp
       -> ;
   +-------+--------------+------+-----+---------+-------+
@@ -385,7 +385,7 @@ VALUES (1, 'jack', 'sparrow', 40);
 **Default Constraint:** It is used to set a `default value` in a table column.
 
 **Input:**
-```
+```sql
 MariaDB [ayushdb]> create table emp1(
     -> ID int not null,
     -> FN varchar(255),
@@ -396,7 +396,7 @@ Query OK, 0 rows affected (0.014 sec)
   ` ED varchar(255) default 'oprations');` is the command to set default values.
 
 **Output:**
-```
+```sql
 MariaDB [ayushdb]> desc emp1
     -> ;
 +-------+--------------+------+-----+-----------+-------+
@@ -410,7 +410,7 @@ MariaDB [ayushdb]> desc emp1
 4 rows in set (0.031 sec)
 ```
 **Inserting Value:**
-```
+```sql
 MariaDB [ayushdb]> insert into emp1(ID,FN,LN)
     -> value(1,'Ayush','Gupta'),
     -> (2,'Moli','Gupta');
@@ -430,7 +430,7 @@ MariaDB [ayushdb]> select * from emp1
 
 ### **Check constraint**
 **create a table:**
-```
+```sql
 MariaDB [ayushdb]> create table emp2(
     -> ID int not null,
     -> FN varchar(255),
@@ -451,13 +451,7 @@ MariaDB [ayushdb]> desc emp2;
 4 rows in set (0.028 sec)
 ```
 **Insert Values**
-```
-MariaDB [ayushdb]> insert into emp2 (ID, FN, LN, Age)
-    -> values(1,'Ayush','Gupta',18);
-ERROR 4025 (23000): CONSTRAINT `CONSTRAINT_1` failed for `ayushdb`.`emp2`
-MariaDB [ayushdb]> insert into emp2 (ID, FN, LN, Age)
-    -> values(1,'Ayush','Gupta',20);
-ERROR 4025 (23000): CONSTRAINT `CONSTRAINT_1` failed for `ayushdb`.`emp2`
+```sql
 MariaDB [ayushdb]> insert into emp2 (ID, FN, LN, Age)
     -> values(1,'Ayush','Gupta',22);
 Query OK, 1 row affected (0.003 sec)
@@ -465,7 +459,7 @@ Query OK, 1 row affected (0.003 sec)
 **Note:** It is gibing error because we were tring to enter a age less than 20
 
 **Output:**
-```
+```sql
 MariaDB [ayushdb]> select * from emp2
     -> ;
 +----+-------+-------+------+
@@ -481,7 +475,7 @@ MariaDB [ayushdb]> select * from emp2
 
 
 **Adding a Column:**
-```
+```sql
 MariaDB [ayushdb]> desc emp2;
 +-------+--------------+------+-----+---------+-------+
 | Field | Type         | Null | Key | Default | Extra |
@@ -511,7 +505,7 @@ MariaDB [ayushdb]> desc emp2;
 5 rows in set (0.063 sec)
 ```
 **Deleating a column:**
-```
+```sql
 MariaDB [ayushdb]> desc emp2;
 +-------+--------------+------+-----+---------+-------+
 | Field | Type         | Null | Key | Default | Extra |
@@ -544,7 +538,7 @@ MariaDB [ayushdb]> desc emp2;
 
 **Modify Table:**
 
-```
+```sql
 MariaDB [ayushdb]> desc emp2;
 +-------+--------------+------+-----+---------+-------+
 | Field | Type         | Null | Key | Default | Extra |
@@ -575,7 +569,7 @@ MariaDB [ayushdb]> desc emp2;
 
 **AND OPRATOR:** used to give more than one condition.
 
-```
+```sql
 MariaDB [ayushdb]> select * from emp;
 +----+----------+-------+------+-------+
 | ID | FN       | LN    | AGE  | ZONE  |
@@ -608,7 +602,7 @@ MariaDB [ayushdb]> select * from emp
 ```
 
 **OR oprator**
-```
+```sql
 MariaDB [ayushdb]> select * from emp;
 +----+----------+-------+------+-------+
 | ID | FN       | LN    | AGE  | ZONE  |
@@ -643,7 +637,7 @@ MariaDB [ayushdb]> select * from emp
 
 
 **NOT OPRATOR**
-```
+```sql
 MariaDB [ayushdb]> select * from emp;
 +----+----------+-------+------+-------+
 | ID | FN       | LN    | AGE  | ZONE  |
@@ -679,7 +673,7 @@ MariaDB [ayushdb]> select * from emp
 ```
 
 **IN , NOT IN oprator**
-```
+```sql
 MariaDB [ayushdb]> select * from emp;
 +----+----------+-------+------+-------+
 | ID | FN       | LN    | AGE  | ZONE  |
@@ -725,7 +719,7 @@ MariaDB [ayushdb]> select * from emp
 **LIKE oprator**
 
 `example 1`
-```
+```sql
 MariaDB [ayushdb]> select * from emp;
 +----+----------+-------+------+-------+
 | ID | FN       | LN    | AGE  | ZONE  |
@@ -748,7 +742,7 @@ MariaDB [ayushdb]> select * from emp
 2 rows in set (0.001 sec)
 ```
 `example 2`
-```
+```sql
 MariaDB [ayushdb]> select * from emp
     -> where ln like 's%';
 +----+--------+------+------+-------+
@@ -760,7 +754,7 @@ MariaDB [ayushdb]> select * from emp
 ```
 
 `Example 3`
-```
+```sql
 MariaDB [ayushdb]> select * from emp;
 +----+----------+-------+------+-------+
 | ID | FN       | LN    | AGE  | ZONE  |
@@ -785,7 +779,7 @@ MariaDB [ayushdb]> select * from emp
 4 rows in set (0.001 sec)
 ```
 `Example 4`
-```
+```sql
 MariaDB [ayushdb]> select * from emp
     -> where zone like '___t_';
 +----+----------+-------+------+-------+
@@ -806,7 +800,7 @@ Empty set (0.001 sec)
 
 **Between**
 
-```
+```sql
 MariaDB [ayushdb]> select * from emp
     -> ;
 ERROR 2006 (HY000): MySQL server has gone away
@@ -846,7 +840,7 @@ MariaDB [ayushdb]> select * from emp
 ```
 
 **CASE**
-```
+```sql
 MariaDB [ayushdb]> select * from emp;
 +----+--------+----------+------+------------+
 | ID | FN     | LN       | AGE  | ZONE       |
@@ -911,7 +905,7 @@ MariaDB [ayushdb]> select fn,ln,age,
 
 **comment**
 
-```
+```sql
 MariaDB [ayushdb]> select * from emp; # featch all record from table emp
 +----+--------+----------+------+------------+
 | ID | FN     | LN       | AGE  | ZONE       |
@@ -1002,7 +996,7 @@ MariaDB [ayushdb]> select *
 
 **SUM()**
 
-```
+```sql
 MariaDB [ayushdb]> select sum(age) from emp;
 +----------+
 | sum(age) |
@@ -1021,7 +1015,7 @@ MariaDB [ayushdb]> select sum(age) as result from emp;
 ```
 
 **AVG()**
-```
+```sql
 MariaDB [ayushdb]> select avg(age) from emp;
 +----------+
 | avg(age) |
@@ -1032,7 +1026,7 @@ MariaDB [ayushdb]> select avg(age) from emp;
 ```
 
 **count()**
-```
+```sql
 MariaDB [ayushdb]> select * from emp;
 +----+--------+----------+------+------------+
 | ID | FN     | LN       | AGE  | ZONE       |
@@ -1085,7 +1079,7 @@ MariaDB [ayushdb]> select count(age) from emp;
 1 row in set (0.001 sec)
 ```
 **MAX()**
-```
+```sql
 MariaDB [ayushdb]> select max(age) from emp;
 +----------+
 | max(age) |
@@ -1095,7 +1089,7 @@ MariaDB [ayushdb]> select max(age) from emp;
 1 row in set (0.001 sec)
 ```
 **min()**
-```
+```sql
 MariaDB [ayushdb]> select min(age) from emp;
 +----------+
 | min(age) |
@@ -1108,7 +1102,7 @@ MariaDB [ayushdb]> select min(age) from emp;
 ### **UPDATE**
 
 **Single Record**
-```
+```sql
 MariaDB [ayushdb]> update emp
     -> set age=18 where id=14;
 Query OK, 1 row affected (0.006 sec)
@@ -1154,7 +1148,7 @@ Rows matched: 1  Changed: 1  Warnings: 0
 
 ### **Delete statement**
 
-```
+```sql
 MariaDB [ayushdb]> select * from emp;
 +----+--------+----------+------+------------+
 | ID | FN     | LN       | AGE  | ZONE       |
@@ -1240,7 +1234,7 @@ MariaDB [ayushdb]> desc emp1;
 4 rows in set (0.062 sec)
 ```
 ### **order**
-```
+```sql
 MariaDB [ayushdb]> select * from emp;
 +----+--------+----------+------+------------+
 | ID | FN     | LN       | AGE  | ZONE       |
@@ -1351,7 +1345,7 @@ MariaDB [ayushdb]> select * from emp
 ```
 ### **limit statement**
 
-```
+```sql
 MariaDB [ayushdb]> select * from emp
     -> limit 3;
 +----+-------+--------+------+-------+
@@ -1364,7 +1358,7 @@ MariaDB [ayushdb]> select * from emp
 3 rows in set (0.001 sec)
 ```
 ### **Alis --(AS)**
-```
+```sql
 MariaDB [ayushdb]> select * from emp;
 +----+--------+----------+------+------------+
 | ID | FN     | LN       | AGE  | ZONE       |
@@ -1445,7 +1439,7 @@ MariaDB [ayushdb]> select fn as First_name,ln as last_name from emp;
 ```
 
 ### **Auto_Increment**
-```
+```sql
 MariaDB [ayushdb]> create table emp3(
     -> ID int not null auto_increment,
     -> fn varchar(255),
@@ -1488,7 +1482,7 @@ MariaDB [ayushdb]> select * from emp3;
 ```
 ### **Creating an index**
 
-```
+```sql
 MariaDB [ayushdb]> create index demoindex
     -> on emp3(fn);
 Query OK, 0 rows affected (0.050 sec)
@@ -1513,7 +1507,7 @@ MariaDB [ayushdb]> show indexes from emp3;
 ```
 
 **Dleating an index(crop index)**
-```
+```sql
 MariaDB [ayushdb]> drop index demoindex on emp3;
 Query OK, 0 rows affected (0.043 sec)
 Records: 0  Duplicates: 0  Warnings: 0
@@ -1532,7 +1526,7 @@ MariaDB [ayushdb]> show indexes from emp3;
 
 ### **Inner join**
 
-```
+```sql
 MariaDB [ayushdb]>  select * from emp;
 +----+--------+----------+------+------------+
 | ID | FN     | LN       | AGE  | ZONE       |
@@ -1598,4 +1592,80 @@ MariaDB [ayushdb]> select emp.id,emp3.zone from emp
 +----+-------+
 2 rows in set (0.000 sec)
 
+```
+### **LEFT JOIN**
+```sql
+MariaDB [ayushdb]> select * from emp;
++----+--------+----------+------+------------+
+| ID | FN     | LN       | AGE  | ZONE       |
++----+--------+----------+------+------------+
+|  1 | Ayush  | Sharma   |   28 | North      |
+|  2 | Priya  | Verma    |   34 | East       |
+|  3 | Rohan  | Mehta    |   41 | West       |
+|  4 | Sneha  | Patel    |   25 | South      |
+|  5 | Karan  | Singh    |   30 | Central    |
+|  6 | Neha   | Jain     |   29 | North-East |
+|  8 | Divya  | Kapoor   |   33 | North-West |
+|  9 | Vikram | Joshi    |   45 | East       |
+| 10 | Meera  | Nair     |   27 | South-East |
+| 11 | Tanvi  | Chopra   |   26 | North      |
+| 12 | Aman   | Gill     |   32 | West       |
+| 13 | Ritika | Malhotra |   24 | South-East |
+| 14 | Harsh  | Thakur   |   18 | Central    |
+| 15 | Simran | Kaur     |   31 | North-East |
+| 16 | Rajeev | Bansal   |   40 | South-West |
+| 17 | Isha   | Arora    |   28 | East       |
+| 18 | Nikhil | Dey      |   35 | North-West |
+| 19 | Tanya  | Mishra   |   30 | South      |
+| 20 | Yuvraj | Chandel  |   42 | West       |
++----+--------+----------+------+------------+
+19 rows in set (0.000 sec)
+
+MariaDB [ayushdb]> select * from emp3;
++----+----------+---------+-----+-------+
+| ID | fn       | ln      | age | zone  |
++----+----------+---------+-----+-------+
+|  1 | Ayush    | gupta   |  18 | north |
+|  2 | Piyush   | Gupta   |  13 | north |
+|  7 | sdafadfa | afadfad |  90 | south |
+|  8 | dfa      | adfsf   |  45 | west  |
++----+----------+---------+-----+-------+
+4 rows in set (0.001 sec)
+
+MariaDB [ayushdb]> select emp.id,emp3.ln from emp3
+    -> left join emp on emp.id = emp3.id;
++------+---------+
+| id   | ln      |
++------+---------+
+|    1 | gupta   |
+|    8 | adfsf   |
+|    2 | Gupta   |
+| NULL | afadfad |
++------+---------+
+4 rows in set (0.001 sec)
+
+MariaDB [ayushdb]> select emp.fn,emp3.ln from emp3
+    -> left join emp on emp.id = emp3.id;
++-------+---------+
+| fn    | ln      |
++-------+---------+
+| Ayush | gupta   |
+| Divya | adfsf   |
+| Priya | Gupta   |
+| NULL  | afadfad |
++-------+---------+
+4 rows in set (0.000 sec)
+
+MariaDB [ayushdb]> select emp.id,emp3.ln from emp3
+    -> left join emp on emp.id = emp3.id
+    -> order by emp3.id;
++------+---------+
+| id   | ln      |
++------+---------+
+|    1 | gupta   |
+|    2 | Gupta   |
+| NULL | afadfad |
+|    8 | adfsf   |
++------+---------+
+4 rows in set (0.001 sec)
 ```

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 18, 2025 at 09:04 PM
+-- Generation Time: Sep 19, 2025 at 03:54 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -113,7 +113,9 @@ CREATE TABLE `emp3` (
 
 INSERT INTO `emp3` (`ID`, `fn`, `ln`, `age`, `zone`) VALUES
 (1, 'Ayush', 'gupta', 18, 'north'),
-(2, 'Piyush', 'Gupta', 13, 'north');
+(2, 'Piyush', 'Gupta', 13, 'north'),
+(7, 'sdafadfa', 'afadfad', 90, 'south'),
+(8, 'dfa', 'adfsf', 45, 'west');
 
 --
 -- Indexes for dumped tables
@@ -140,7 +142,7 @@ ALTER TABLE `emp3`
 -- AUTO_INCREMENT for table `emp3`
 --
 ALTER TABLE `emp3`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

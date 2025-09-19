@@ -1765,3 +1765,41 @@ MariaDB [ayushdb]> show tables;
 +-------------------+
 3 rows in set (0.001 sec)
 ```
+
+### **DROP DATABASE**
+
+```sql
+MariaDB [ayushdb]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| ayush              |
+| ayushdb            |
+| information_schema |
+| ms1                |
+| mysql              |
+| performance_schema |
+| phpmyadmin         |
+| test               |
+| w1                 |
++--------------------+
+9 rows in set (0.001 sec)
+
+MariaDB [ayushdb]> drop database ayush;
+Query OK, 0 rows affected (0.001 sec)
+
+MariaDB [ayushdb]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| ayushdb            |
+| information_schema |
+| ms1                |
+| mysql              |
+| performance_schema |
+| phpmyadmin         |
+| test               |
+| w1                 |
++--------------------+
+8 rows in set (0.001 sec)
+```

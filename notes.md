@@ -1736,3 +1736,32 @@ MariaDB [ayushdb]> select emp.id,emp3.ln from emp3
 +----+-------+
 19 rows in set (0.001 sec)
 ```
+### **DROP TABLE**
+```sql
+MariaDB [ayushdb]> desc emp3;
++-------+--------------+------+-----+---------+----------------+
+| Field | Type         | Null | Key | Default | Extra          |
++-------+--------------+------+-----+---------+----------------+
+| ID    | int(11)      | NO   | PRI | NULL    | auto_increment |
+| fn    | varchar(255) | YES  | MUL | NULL    |                |
+| ln    | varchar(255) | YES  |     | NULL    |                |
+| age   | int(11)      | NO   |     | NULL    |                |
+| zone  | varchar(255) | YES  |     | NULL    |                |
++-------+--------------+------+-----+---------+----------------+
+5 rows in set (0.017 sec)
+
+MariaDB [ayushdb]> drop table emp3;
+Query OK, 0 rows affected (0.010 sec)
+
+MariaDB [ayushdb]> desc emp3;
+ERROR 1146 (42S02): Table 'ayushdb.emp3' doesn't exist
+MariaDB [ayushdb]> show tables;
++-------------------+
+| Tables_in_ayushdb |
++-------------------+
+| emp               |
+| emp1              |
+| emp2              |
++-------------------+
+3 rows in set (0.001 sec)
+```
